@@ -34,10 +34,10 @@ public class WeaponManagerUI : Singleton<WeaponManagerUI>
         _Switch = transform.Find("Button/Switch").GetComponent<Image>();
         _Cancel = transform.Find("Button/Cancel").GetComponent<Image>();
         _Recharge = transform.Find("Upgrade").GetComponent<Image>();
-        _BarData = transform.Find("DataWeapon").GetComponent<Image>();
-        _nameText = transform.Find("DataWeapon/Name").GetComponent<TextMeshProUGUI>();
-        _atkText = transform.Find("DataWeapon/Atk").GetComponent<TextMeshProUGUI>();
-        _cooldownText = transform.Find("DataWeapon/Cooldown").GetComponent<TextMeshProUGUI>();
+        _BarData = transform.Find("WeaponStats/DataWeapon").GetComponent<Image>();
+        _nameText = transform.Find("WeaponStats/DataWeapon/Name").GetComponent<TextMeshProUGUI>();
+        _atkText = transform.Find("WeaponStats/DataWeapon/Atk").GetComponent<TextMeshProUGUI>();
+        _cooldownText = transform.Find("WeaponStats/DataWeapon/Cooldown").GetComponent<TextMeshProUGUI>();
         _IsUpgrade = false; _IsSwitch = false;_Coint = 0;
     }
     private void Start()
@@ -120,6 +120,7 @@ public class WeaponManagerUI : Singleton<WeaponManagerUI>
                 _WeaponPrefab[Slot.GetID()] = null;
             }
             _elementCopy.transform.SetParent(Slot.transform, false);
+            _elementCopy.SetBackGround(false);
             _elementCopy.SetRect(Slot.GetRect());
             _WeaponPrefab[Slot.GetID()] = _elementCopy;
             _elementCopy.SetRayCast(false);

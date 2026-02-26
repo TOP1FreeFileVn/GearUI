@@ -13,7 +13,7 @@ public class WeaponSlotUI : MonoBehaviour
     [SerializeField] private int _levelCurrent;
     [SerializeField] private int _prizeCurrent;
     [SerializeField] private Transform _Lock;
-    [SerializeField] private Image _Level;
+    [SerializeField] private GameObject _Level;
     [SerializeField] private Image _CoinToUnLock;
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private TextMeshProUGUI _priceText;
@@ -26,7 +26,7 @@ public class WeaponSlotUI : MonoBehaviour
         _StatusChose = GetComponent<Image>();
         _bg = transform.Find("BG").GetComponent<RectTransform>();
         _Lock = transform.Find("Lock");
-        _Level = transform.Find("Level").GetComponent<Image>();
+        _Level = transform.Find("Level").gameObject;
         _CoinToUnLock = transform.Find("Lock/CoinToUnLock").GetComponent<Image>();
         _priceText = transform.Find("Lock/CoinToUnLock/Price").GetComponent<TextMeshProUGUI>();
         _levelText = transform.Find("Level/LevelText").GetComponent<TextMeshProUGUI>();
@@ -63,7 +63,7 @@ public class WeaponSlotUI : MonoBehaviour
     {
         _Level.gameObject.SetActive(true);
         _levelCurrent = level;
-        _levelText.text = "Level " + _levelCurrent.ToString();
+        _levelText.text = "LV." + _levelCurrent.ToString();
     }
     public void SetSlotLock(int price)
     {

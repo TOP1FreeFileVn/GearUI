@@ -9,6 +9,9 @@ public class LevelItem : MonoBehaviour
     public GameObject lockIcon;     // Kéo ổ khóa vào
     public Button btnButton;        // Kéo Button vào
 
+    [Header("Settings")]
+
+
     private int _index;
 
     public void Setup(int index, bool isLocked)
@@ -18,18 +21,13 @@ public class LevelItem : MonoBehaviour
         // 1. XỬ LÝ TEXT
         if (levelText != null)
         {
-            // Nếu bị khóa -> Ẩn Text luôn
-            if (isLocked)
+
+            levelText.gameObject.SetActive(!isLocked );
+
+            if (levelText.gameObject.activeSelf)
             {
-                levelText.gameObject.SetActive(false);
-            }
-            else
-            {
-                // Nếu mở -> Hiện Text
-                levelText.gameObject.SetActive(true);
-                
-                // Set nội dung text
-                if (gameObject.name.Contains("Stage"))
+               
+                if (!isLocked)
                     levelText.text = "Stage " + index;
                 else
                     levelText.text = index.ToString();
@@ -42,14 +40,22 @@ public class LevelItem : MonoBehaviour
         // 3. XỬ LÝ NÚT BẤM
         if (btnButton)
         {
+            // Chỉ cho bấm nếu không bị khóa
             btnButton.interactable = !isLocked;
             btnButton.onClick.RemoveAllListeners();
-            if (!isLocked) btnButton.onClick.AddListener(OnClicked);
+            if (!isLocked)
+            {
+                btnButton.onClick.AddListener(OnClicked);
+            }
         }
     }
 
     void OnClicked()
     {
-        MapController.Instance.OnLevelComplete(_index);
+        // Khi click vào màn hiện tại, coi như hoàn thành để test logic ẩn màn cũ
+        if (MapController.Instance != null)
+        {
+            MapController.Instance.OnLevelComplete(_index);
+        }
     }
 }

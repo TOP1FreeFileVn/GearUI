@@ -22,7 +22,7 @@ public class WeaponUI : MonoBehaviour
     [SerializeField] private float _cooldown = 10f;
     private void Awake()
     {
-        _StatusChose = GetComponent<Image>();
+        _StatusChose = transform.Find("Background").GetComponent<Image>();
         _btn = GetComponent<Button>();
         _Icon = transform.Find("Icon").GetComponent<Image>();
         _Lock = transform.Find("Lock").GetComponent<Image>();
@@ -92,5 +92,9 @@ public class WeaponUI : MonoBehaviour
         {
             WeaponManagerUI.Instance.OnClickWeaponTurn1(this);
         }
+    }
+    public void SetBackGround(bool set)
+    {
+        _StatusChose.gameObject.SetActive(set);
     }
 }
