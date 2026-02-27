@@ -16,7 +16,7 @@ public class MapController : MonoBehaviour
 
     [Header("Connector Settings")]
     public Sprite ropeSprite;       // Kéo hình PNG sợi dây vào đây
-    public float ropeWidth = 30f;   // Độ rộng của dây
+    public float ropeWidth;   // Độ rộng của dây
     public Color ropeColor = Color.white; // Màu nhuộm (nếu dùng PNG trắng)
 
     [Header("Config")]
@@ -36,6 +36,7 @@ public class MapController : MonoBehaviour
 
     void Start()
     {
+        ropeWidth = levelPrefab.GetComponent<RectTransform>().rect.width * 0.5f;
         GenerateInitialMap();
     }
 
