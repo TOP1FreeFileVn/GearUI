@@ -5853,7 +5853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7377162185616767025, guid: f36fc75a1d84ddf46a31a836ef327c13, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1774.6094
+      value: -1414.6105
       objectReference: {fileID: 0}
     - target: {fileID: 8548363933218206633, guid: f36fc75a1d84ddf46a31a836ef327c13, type: 3}
       propertyPath: m_Pivot.x
