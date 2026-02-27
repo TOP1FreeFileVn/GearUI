@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Barmeno-ExtraBold-Regular SDF 3
+  m_Name: origin 1
   m_EditorClassIdentifier: 
-  hashCode: -1414203585
+  hashCode: -1449698459
   material: {fileID: 8903657184434347900}
-  materialHashCode: 170537151
+  materialHashCode: 446117029
   m_Version: 1.1.0
   m_SourceFontFileGUID: 1645d4c64fd414648974a0fa7a968e7b
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 1645d4c64fd414648974a0fa7a968e7b, type: 3}
@@ -1317,7 +1317,7 @@ Material:
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.54901963, g: 0.24705882, b: 0, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
